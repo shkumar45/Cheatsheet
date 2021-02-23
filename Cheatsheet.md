@@ -20,6 +20,12 @@ docker-compose down
 docker-compose ps
 ```
 
+
+### use following command to start a redis docker instance and map the port
+```
+docker run -d -p 6378:6379 redis
+```
+
 ## minikube
 
 - minikube is for development and is equivalent to EKS or kubernetes.
