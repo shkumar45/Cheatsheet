@@ -24,6 +24,8 @@ docker-compose ps
 ### use following command to start a redis docker instance and map the port
 ```
 docker run -d -p 6378:6379 redis
+6378 - host port (meaning your local redis client will connect to this port)
+6379 - contaner port
 ```
 
 ## minikube
