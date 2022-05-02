@@ -1,4 +1,4 @@
-- kubernetes [here](k8s.md)
+- kubernetes [here](kubernetes.md)
 - python [here](python.md)
 - vscode [here](vscode_hacks.md)
 - docker [here](docker.md)
