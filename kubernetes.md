@@ -127,8 +127,8 @@ minikube addons enable ingress
 
 ```
 $ export KOPS_STATE_STORE=s3://clusters.k8s.appychip.vpc.us-west-1
-$ export AWS_ACCESS_KEY_ID=AKIAZARSAS4T3E6XF3EE
-$ export AWS_SECRET_ACCESS_KEY=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
+$ export AWS_ACCESS_KEY_ID=
+$ export AWS_SECRET_ACCESS_KEY=
 
 $ kops create cluster \
 --cloud=aws \
