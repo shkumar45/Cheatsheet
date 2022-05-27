@@ -1,4 +1,4 @@
 ## Commands
-- Remove unwanted imports - CTRL+OPT+o
-- duplicate line below - CMD+D
-- delete line - CMD+del
+- Remove unwanted imports `CTRL+OPT+O`
+- duplicate line below `CMD+D`
+- delete line `CMD+del`
