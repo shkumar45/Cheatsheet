@@ -1,27 +1,13 @@
-### Find a file with the name
+- Find a file with the name `CMD+P`
 
-`CMD+P`
+- select one by one the highlighted word for replacing `CMD+d`
 
-### select one by one the highlighted word for replacing
+- select all the highlighted word for replacing `CMD+SHIFT+L`
 
-`CMD+d`
+- move the line(s) up/below `OPT+up/down`
 
-### select all the highlighted word for replacing
+- copy and paste the line(s) below `SHIFT+OPT+up/down`
 
-`CMD+SHIFT+L`
+- custom snippets `code->pref->user snippets`
 
-### move the line(s) up/below
-
-`OPT+up/down`
-
-### copy and paste the line(s) below
-
-`SHIFT+OPT+up/down`
-
-### custom snippets
-
-`code->pref->user snippets`
-
-### format json or any other document type
-
-`OPT+SHIFT+F`
+- format json or any other document type `OPT+SHIFT+F`
