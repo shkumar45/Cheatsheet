@@ -14,10 +14,10 @@ docker ps
 docker commit -c 'CMD ["redis-server"]' <cd269634eed9>
 docker run -p 8081:8080 skumar/simpleweb
 
-docker-compose up --build
-docker-compose up -d
-docker-compose down
-docker-compose ps
+docker-compose up --build [OR docker compose up -- build]
+docker-compose up -d [OR docker compose up -d]
+docker-compose down [OR docker compose down]
+docker-compose ps [docker compose ps]
 
 
 docker compose up/down <service name>  ## if you want to bring up/down a specific service up ##
