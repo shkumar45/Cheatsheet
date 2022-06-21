@@ -18,6 +18,9 @@ docker-compose up --build
 docker-compose up -d
 docker-compose down
 docker-compose ps
+
+
+docker compose up/down <service name>  ## if you want to bring up/down a specific service up ##
 ```
 
 ### use following command to start a redis docker instance and map the port
