@@ -14,6 +14,8 @@ docker ps
 docker commit -c 'CMD ["redis-server"]' <cd269634eed9>
 docker run -p 8081:8080 skumar/simpleweb
 
+docker exec -it <container name/id> /bin/bash
+
 docker-compose up --build [OR docker compose up -- build]
 docker-compose up -d [OR docker compose up -d]
 docker-compose down [OR docker compose down]
