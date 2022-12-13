@@ -55,6 +55,7 @@ broadly categorized as
 ## minikube
 
 - minikube is for development and is equivalent to EKS or kop cluster.
+- useful read - Goodbye Docker Desktop, Hello Minikube! [link](https://itnext.io/goodbye-docker-desktop-hello-minikube-3649f2a1c469)
 - it is a program which creates a virtual machine (called node which contains containers).
 - Docker Desktop has a built in kubernetes.
 - It is different from kubernetes in docker desktop in the sense that docker creates a virtual machine when it is installed with minikube it is not.
