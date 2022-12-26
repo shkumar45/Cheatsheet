@@ -6,8 +6,10 @@ pyenv help
 pyenv versions
 pyenv install --list
 pyenv install 3.9.0
-
-virtualenv - python -m venv venv
+```
+if you want to use virtual environment do the following
+```
+python -m venv .venv
 ```
 python current version can be set by following 
 
