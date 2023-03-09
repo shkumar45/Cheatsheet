@@ -5,3 +5,4 @@
 - aws [here](aws_tools.md)
 - intelliJ [here](intellij-hacks.md)
 - node [here](node.md)
+- git [here](git_commands.md)
