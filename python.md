@@ -14,7 +14,7 @@ python -m venv .venv
 python current version can be set by following 
 
 ```
-- set PYENV_VERSION=3.7.0
+- export PYENV_VERSION=3.7.0
 - pyenv global 3.9.0
 - pyenv local 3.8.6
 ```
