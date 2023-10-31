@@ -41,7 +41,7 @@ How to control the python interpret in visual studio code
 By adding the following lines in
 * Workspage i.e .vscode/settings.json or
 * Global i.e in $HOME/Library/Application Support/Code/User/Settings.json
-Now version resolution will happen when we restart the vscode 
+Now version resolution will happen when we restart the vscode. Please note that you might have to explicitly set the interpreter in vscode to use the defaultInterpreterPath which is bit of a pain and i hope microsoft fixes this.
 ```
 {
   "[python]":{
