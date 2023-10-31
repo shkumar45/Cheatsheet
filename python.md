@@ -7,10 +7,13 @@ pyenv versions
 pyenv install --list
 pyenv install 3.9.0
 ```
+----
 if you want to use virtual environment do the following
 ```
 python -m venv .venv
 ```
+
+----
 python current version can be set by following 
 
 ```
@@ -23,7 +26,7 @@ note that
 * pyenv global 3.9.0 => sets version in ~/.pyenv/version
 * pyenv local 3.8.6 => sets version in the .python-version file of local directory
 
-
+-----
 <b>Version resolution by pyenv</b>
 
 1. $PYENV_VERSION
@@ -32,3 +35,21 @@ note that
 
 
 If you want to change the python command to resolve in the same order set in 3 above then put ~/.pyenv/shims in PATH
+
+-------
+How to control the python interpret in visual studio code using pyenv
+By adding the following lines in
+* Workspage i.e .vscode/settings.json or
+* Global i.e in $HOME/Library/Application Support/Code/User/Settings.json
+Now version resolution will happen in the same order specified above. We just need to restart the vscode when we change version and want it to be effective in the IDE
+```
+{
+  "[python]":{
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+  },
+  "python.defaultInterpreterPath": "~/.pyenv/shims/python",
+  "black-formatter.args": ["--line-length=120"]
+}
+```
+* The above code is making use of black fomatter for linting and formatting needs. Flake8 linter is another popular linter.
