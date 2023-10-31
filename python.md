@@ -48,7 +48,7 @@ Now version resolution will happen when we restart the vscode
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true,
   },
-  "python.defaultInterpreterPath": "~/.pyenv/version/3.11.1/bin/python",
+  "python.defaultInterpreterPath": "~/.pyenv/versions/3.11.1/bin/python",
   "black-formatter.args": ["--line-length=120"]
 }
 ```
