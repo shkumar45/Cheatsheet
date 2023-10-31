@@ -41,7 +41,7 @@ How to control the python interpret in visual studio code using pyenv
 By adding the following lines in
 * Workspage i.e .vscode/settings.json or
 * Global i.e in $HOME/Library/Application Support/Code/User/Settings.json
-Now version resolution will happen in the same order specified above. We just need to restart the vscode when we change version and want it to be effective in the IDE
+Now version resolution will happen from shims ie. `pyenv global 3.11.1` and so. We just need to restart the vscode when we change version and want it to be effective in the IDE
 ```
 {
   "[python]":{
