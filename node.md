@@ -4,6 +4,7 @@
 
 * upgrade stable version of node
 
-'nvm install stable'
+`nvm install stable`
 
 * list all the version
+`nvm ls`
