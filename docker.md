@@ -24,7 +24,11 @@ docker-compose ps [docker compose ps]
 
 docker compose up/down <service name>  ## if you want to bring up/down a specific service up ##
 ```
+real time monitoring of running instances
 
+```
+docker stats
+```
 ### use following command to start a redis docker instance and map the port
 
 ```
