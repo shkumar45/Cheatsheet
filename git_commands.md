@@ -7,7 +7,7 @@ follow the article
 [Adding your SSH key to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent)
 
 ## using multiple ssh key
-make sure you set the user.email before making the very first commit on local. Else it is quite possible it picks up the github user from global config
+Make sure **you set the user.email before making the very first commit on local**. Else it is quite possible it picks up the github user from global config
 ### steps
 ```
 git init
