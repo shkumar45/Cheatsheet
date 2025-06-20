@@ -3,10 +3,12 @@
 ```
 brew install pyenv
 pyenv help
-pyenv versions
-pyenv install --list
-pyenv install 3.9.0
+pyenv versions #list the python versions installed on your machine
+pyenv install --list #list all the python versions available for install py pyenv
+pyenv install 3.9.0 #install version 3.9.0
 ```
+
+
 ----
 if you want to use virtual environment do the following
 ```
@@ -33,8 +35,23 @@ note that
 2. .python-version
 3. ~/.pyenv/version
 
+if pyenv set version is not being picked up by the system then add following in your .zshrc file
+```
+# ~/.zshrc
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+if command -v pyenv >/dev/null; then
+  eval "$(pyenv init -)"
+fi
+
+```
 
 If you want to change the python command to resolve in the same order set in 3 above then put ~/.pyenv/shims in PATH
+```
+export PATH="$PYENV_ROOT/shims:$PATH"
+```
 
 -------
 How to control the python interpret in visual studio code
