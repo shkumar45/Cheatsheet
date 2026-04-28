@@ -6,6 +6,16 @@ follow the article
 
 [Adding your SSH key to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent)
 
+sample ~/.ssh/config -
+```
+Host github.com-personal
+  HostName github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_personal
+  IdentitiesOnly yes
+```
+
 ## using multiple ssh key
 Make sure **you set the user.email before making the very first commit on local**. Else it is quite possible it picks up the github user from global config
 ### steps
