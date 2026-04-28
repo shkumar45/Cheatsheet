@@ -6,3 +6,4 @@
 - intelliJ [here](intellij-hacks.md)
 - node [here](node.md)
 - git [here](git_commands.md)
+- lambda [here](lambda.md)
