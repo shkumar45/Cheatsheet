@@ -1,11 +1,13 @@
 # Skip typing -n chatbot: make it your default namespace.
-```kubectl config set-context --current --namespace=chatbot
+```
+kubectl config set-context --current --namespace=chatbot
 kubectl config view --minify | grep namespace     # confirm
 ```
 
 # Overview
 
-```kubectl -n chatbot get all                        # pods, deployments, replicasets, services
+```
+kubectl -n chatbot get all                        # pods, deployments, replicasets, services
 kubectl -n chatbot get pods -o wide               # + pod IP and node
 kubectl -n chatbot get pods -w                    # watch status changes live
 kubectl -n chatbot get svc,pvc,secret,configmap   # everything else we created
@@ -14,7 +16,8 @@ kubectl get pv                                    # volumes backing the PVC
 ```
 # Logs
 
-```kubectl -n chatbot logs deploy/api                # current logs
+```
+kubectl -n chatbot logs deploy/api                # current logs
 kubectl -n chatbot logs deploy/api -f             # follow (Ctrl+C to stop)
 kubectl -n chatbot logs deploy/api --tail 50      # last 50 lines
 kubectl -n chatbot logs deploy/api --since 10m    # last 10 minutes
@@ -23,7 +26,8 @@ kubectl -n chatbot logs -l app=ui -f              # by label
 ```
 # Debugging
 
-```kubectl -n chatbot describe pod -l app=api        # events: image pulls, probe failures, OOMKilled
+```
+kubectl -n chatbot describe pod -l app=api        # events: image pulls, probe failures, OOMKilled
 kubectl -n chatbot describe deploy/api
 kubectl -n chatbot get events --sort-by=.lastTimestamp   # recent cluster events
 kubectl -n chatbot get pod -l app=api -o yaml     # the full live spec
