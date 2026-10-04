@@ -1,17 +1,17 @@
 Skip typing -n chatbot: make it your default namespace.
-kubectl config set-context --current --namespace=chatbot
+```kubectl config set-context --current --namespace=chatbot
 kubectl config view --minify | grep namespace     # confirm
-
+```
 
 # Overview
 
-kubectl -n chatbot get all                        # pods, deployments, replicasets, services
+```kubectl -n chatbot get all                        # pods, deployments, replicasets, services
 kubectl -n chatbot get pods -o wide               # + pod IP and node
 kubectl -n chatbot get pods -w                    # watch status changes live
 kubectl -n chatbot get svc,pvc,secret,configmap   # everything else we created
 kubectl get ns                                    # all namespaces
 kubectl get pv                                    # volumes backing the PVC
-
+```
 # Logs
 
 kubectl -n chatbot logs deploy/api                # current logs
