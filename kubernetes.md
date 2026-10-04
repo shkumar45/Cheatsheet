@@ -14,67 +14,70 @@ kubectl get pv                                    # volumes backing the PVC
 ```
 # Logs
 
-kubectl -n chatbot logs deploy/api                # current logs
+```kubectl -n chatbot logs deploy/api                # current logs
 kubectl -n chatbot logs deploy/api -f             # follow (Ctrl+C to stop)
 kubectl -n chatbot logs deploy/api --tail 50      # last 50 lines
 kubectl -n chatbot logs deploy/api --since 10m    # last 10 minutes
 kubectl -n chatbot logs deploy/api --previous     # the crashed container's logs (after a restart)
 kubectl -n chatbot logs -l app=ui -f              # by label
-
+```
 # Debugging
 
-kubectl -n chatbot describe pod -l app=api        # events: image pulls, probe failures, OOMKilled
+```kubectl -n chatbot describe pod -l app=api        # events: image pulls, probe failures, OOMKilled
 kubectl -n chatbot describe deploy/api
 kubectl -n chatbot get events --sort-by=.lastTimestamp   # recent cluster events
 kubectl -n chatbot get pod -l app=api -o yaml     # the full live spec
 kubectl top pods -n chatbot                       # CPU/memory (needs: minikube addons enable metrics-server)
-
+```
 # Inside the containers
-
+```
 kubectl -n chatbot exec -it deploy/api -- sh      # shell into the API container
 kubectl -n chatbot exec deploy/api -- env | sort  # check env vars from ConfigMap/Secret
 kubectl -n chatbot exec deploy/api -- ls -la /data            # SQLite volume contents
 kubectl -n chatbot exec deploy/ui -- python -c "import httpx; print(httpx.get('http://api:8000/health').text)"
 kubectl -n chatbot run tmp --rm -it --image=curlimages/curl -- curl -s http://api:8000/health   # throwaway test pod
-
+```
 # Access from your Mac
-
+```
 kubectl -n chatbot port-forward svc/ui 3000:3000  # UI  → http://localhost:3000
 kubectl -n chatbot port-forward svc/api 8000:8000 # API → http://localhost:8000/health
 minikube service ui -n chatbot                    # NodePort via minikube tunnel
-
+```
 # Restarts and rollouts
-
+```
 kubectl -n chatbot rollout restart deploy/api     # restart (e.g. after re-loading :latest)
 kubectl -n chatbot rollout status deploy/api      # wait for the rollout to finish
 kubectl -n chatbot rollout history deploy/api
 kubectl -n chatbot rollout undo deploy/api        # roll back to the previous version
 kubectl -n chatbot delete pod -l app=api          # kill the pod; the Deployment recreates it
+```
 Terraform owns these resources, so changes like scale or set image made with kubectl will b next terraform apply. Make lasting changes in the .tf files, and use kubectl for looking,debugging and restarting.
 
 # Config and secrets
-
+```
 kubectl -n chatbot get configmap chatbot-api-config -o yaml
 kubectl -n chatbot describe secret chatbot-api-keys            # key names + sizes only
 kubectl -n chatbot get secret chatbot-api-keys -o jsonpath='{.data.OPENAI_API_KEY}' | base64 -d | head -c 8; echo   # first 8 chars
+```
 After changing a ConfigMap or Secret, the pods don't pick up the new values until they resty/api.
 
 # Minikube helpers
-
+```
 minikube status
 minikube image ls | grep langgraph                # images available to the cluster
 minikube image load skumar45/langgraph-chatbot-backend:latest
 minikube dashboard                                # web UI for the cluster
 minikube addons enable metrics-server             # enables `kubectl top`
-
+```
 # Cleanup
 
 Prefer Terraform here, since it created these resources:
+```
 terraform -chdir=terraform destroy                # removes everything, including the PVC data
 kubectl delete namespace chatbot                  # kubectl equivalent; leaves Terraform st
 minikube stop                                     # pause the cluster
 minikube delete
-
+```
 
 
 
