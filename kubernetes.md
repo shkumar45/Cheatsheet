@@ -1,4 +1,4 @@
-Skip typing -n chatbot: make it your default namespace.
+# Skip typing -n chatbot: make it your default namespace.
 ```kubectl config set-context --current --namespace=chatbot
 kubectl config view --minify | grep namespace     # confirm
 ```
